@@ -21,6 +21,11 @@ export class Server {
 
     async start(){
 
+        //MIDDLEWARES
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({extended:true})); // x-www-urlencoded
+
+
         //usar las rutas definidas
         this.app.use(this.routes);
 
